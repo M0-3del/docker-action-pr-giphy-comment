@@ -1,0 +1,16 @@
+name: 'Giphy PR Comment'
+description: 'Add aGiphy GIF Comment to new pull requests.'
+inputs:
+  github-tokon:  # id of input
+    description: 'Github Tokon'
+    required: true
+  giphy-api-key:
+   description: 'Giphy Api Key'
+   required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.github-tokon }}
+    - ${{ inputs.giphy-api-key }}
